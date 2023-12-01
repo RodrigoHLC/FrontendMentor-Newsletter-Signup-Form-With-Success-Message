@@ -90,4 +90,4 @@ class App extends React.Component {
 
 
 ;
-ReactDOM.render(<App/>, targetNode)
+ReactDOM.render(<App/>, document.getElementById("targetNode"))
