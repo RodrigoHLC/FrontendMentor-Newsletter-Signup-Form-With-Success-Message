@@ -1,0 +1,235 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+:root {
+    font-family:Roboto;
+    font-weight: 400;
+    color:hsl(234, 29%, 20%)
+}
+html {
+    height:100vh;
+    /* width:150vw; */
+    /* width:min-content; */
+    /* overflow-x:scroll; */
+    background-color:hsl(234, 29%, 20%);
+}
+
+body {
+    height:100%;
+    /* width:100%; */
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+/* --- CARD STARTS HERE --- */
+/* --- CARD STARTS HERE --- */
+
+.card{
+    /* min-width:500px; */
+    max-width:900px;
+    border-radius:2rem;
+    background: white;
+    
+    display:flex;
+    /* justify-content:space-evenly; */
+    padding:1.5rem 1.5rem;
+    gap:1.5rem;
+}
+.card * {
+    /* border:1px solid red; */
+}
+
+.col {
+    flex-grow:1;
+    flex-shrink:1;
+    flex-basis: 100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:stretch;
+    gap:1.5rem;
+    padding:1.5rem;
+}
+.bgDesktop {
+    flex-basis: 100%;
+}
+
+/* --- LEFT COLUMN ITEMS --- */
+/* --- LEFT COLUMN ITEMS --- */
+.col > * {
+    margin:0;
+}
+h1 {
+    font-weight: 700;
+    font-size:3.5rem
+}
+/* --- FEATURES --- */
+span {
+    margin-bottom:1rem;
+    display:flex;
+    align-items:flex-start;
+    gap:1rem;
+}
+
+.tick, span > p {
+    display:inline-block;
+    margin:auto 0;
+    flex-basis:unset;
+}
+
+/* --- EMAIL INPUT --- */
+/* --- EMAIL INPUT --- */
+.emailDiv {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap:1rem;
+}
+label{
+    display:inline-block;
+    height:min-content;
+    font-size:12px;
+    font-weight:700;
+}
+#email, .purple {
+    height: 3.2rem;
+    border-radius:10px;
+}
+#email:hover, .purple:hover {
+    cursor:pointer;
+}
+
+#email {
+    flex-basis: 100%;
+    border:1px solid hsl(231, 7%, 60%);
+    padding:1rem;
+}
+/* --- SUBMIT BUTTON --- */
+.purple {
+    background-color:hsl(234, 29%, 20%);
+    color:white;
+    font-family: roboto;;
+    font-weight: 700;
+    font-size:15px;
+    border:none;
+}
+.purple:hover {
+    background-image:linear-gradient(90deg,salmon, hsl(4, 100%, 67%));
+}
+.purple:focus {
+    background-image:linear-gradient(90deg,rgb(223, 113, 101), hsl(4, 75%, 61%));
+}
+/* --- ERROR MESSAGE (INVISIBLE) --- */
+/* --- ERROR MESSAGE (INVISIBLE) --- */
+.errorMSG {
+    display:inline-block;
+    margin:0;
+    font-size:12px;
+    font-weight:700;
+    color:Tomato;
+    opacity:0;
+}
+p.errorMSG {
+    border: none !important;
+    background-color: transparent !important;
+}
+/* --- ERROR STATE/CLASS --- */
+/* --- ERROR STATE/CLASS --- */
+.error {
+    color:tomato;
+    border:1px solid red !important;
+    background-color:hsl(4, 100%, 91%) !important;
+    opacity:1 !important;
+}
+/* --- MOBILE IMAGE IS DISABLED --- */
+/* --- MOBILE IMAGE IS DISABLED --- */
+.bgMobile {
+    display:none
+}
+
+/*  ---- S U C C E S S    S T A T E ---- */
+/*  ---- S U C C E S S    S T A T E ---- */
+
+.card > *:not(.success) {
+/*     display:none; */
+}
+.success{
+    max-width:400px;
+    gap:2rem;
+}
+.tickBig {
+    width:60px;
+
+}
+.success h1{
+    /* font-size:3rem; */
+    line-height:3rem;
+    /* font-size:15vmin */
+}
+.success p{
+    font-weight:400;
+    font-size:16px;
+}
+
+
+/* ----- M O B I L E   S C R E E N S ----- */
+
+/* ----- M O B I L E   S C R E E N S ----- */
+
+@media (max-width:430px) {
+    html{
+        min-height:fit-content;
+        max-height: 100vh;
+        background-color: white;
+    }
+    
+    body {
+        padding:0;
+        margin:0;
+        height:unset;
+        /* height:100vh; */
+        align-items:stretch;
+        
+    }
+    .card {
+        flex-direction:column;
+        justify-content:flex-start;
+        width:100%;
+        min-width:280px;
+        height:unset;
+        padding:0;
+        border-radius:0;
+        flex-basis:100%;
+        height:100%;
+    }
+    .col {
+        flex-grow: 2;
+    }
+    /* --- ENABLE DESKTOP IMG --- */
+    .bgMobile {
+        display:block;
+        flex-basis: 100%;
+        
+        flex-grow:1;
+    flex-shrink:1;
+    flex-basis: 100%;
+    }
+    /* --- DISABLE DESKTOP IMG --- */
+    .bgDesktop {
+        display: none;
+    }
+
+    /* --- SUCCESS HEADER SIZE --- */
+    .success h1{
+        font-size:14vmin;
+        line-height: 12VMIN;
+    }
+
+
+}
+
+
+
+
